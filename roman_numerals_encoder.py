@@ -1,9 +1,8 @@
 def solution(n):
     dic = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    result = ''
-    remain = n % 1000
-    digit = n // 1000
-    result = result + 'M' * digit
+    remain = n % 10
+
+    n /= 10
 
 
 if __name__ == '__main__':
