@@ -2,7 +2,8 @@
 #include <string.h>
 #include <ctype.h>
 
-char *wave(char *y)
+
+void wave(char *y, char **target)
 {
   int len = strlen(y);
   int spaces = 0;
@@ -16,13 +17,8 @@ char *wave(char *y)
       continue;
     }
     upper_y[i] = toupper(upper_y[i]);
-    printf("%s\n", upper_y);
-    upper_y[i] = tolower(upper_y[i - spaces]);
+    strcpy(target[i-spaces], upper_y);
+    upper_y[i] = tolower(upper_y[i]);
   }
-  return 0;
-}
-
-int main() {
-  printf("%s", wave(" gap "));
-  return 0;
+  return target;
 }
